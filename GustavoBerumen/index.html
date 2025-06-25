@@ -1,71 +1,96 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Gustavo Berumen</title>
-    <link rel="icon" type="image/x-icon" href="images/GB-icon.png">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-      body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
-      div, hr {border: none}
-    </style>
-  </head>
-<body class="w3-center">
-
-<!-- Navbar -->
-<div class="w3-top w3-white w3-center" id="myNavbar" style="border: none">
-  <div class="w3-bar">
-    <a href="index.html" class="w3-bar-item w3-container" style="text-decoration: none; font-weight: bold">Home</a>
-    <a href="experience.html" class="w3-bar-item w3-hover-opacity w3-container" style="text-decoration: none;">Experience</a>
-    <a href="research.html" class="w3-bar-item w3-hover-opacity w3-container" style="text-decoration: none;">Research</a>
-    <a href="CV.html" class="w3-bar-item w3-hover-opacity w3-container" style="text-decoration: none">CV</a>
-  </div>
-</div>
-
-<!-- Page Content -->
-<div class="w3-padding-large" id="main">
-  <!-- Header/Home -->
-  <header class="w3-container w3-padding-32 w3-center" id="home">
-    <h1><span class="w3-hide-small">Gustavo Berumen</span></h1>
-    <h4>Experience Researcher</h4>
-    <img src="images/gus_profile_image.jpeg" alt="GustavoBerumen">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Business Profile</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-content">
+      <div class="logo">BusinessName</div>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="#contact" class="btn btn-primary">Get Started</a>
+    </div>
   </header>
 
-  <!-- About Section -->
-  <div class="w3-content w3-justify w3-padding-64 w3-center" id="about">
-    <h2>About Me</h2>
-    <hr style="width:200px" class="w3-opacity">
-    <h4>
-      I am a user experience researcher who has specialised in human-centred studies and investigating the use of data as a resource for improving the design of technologies. I have been involved in every aspect of research, including study conceptualisation, experimental design, data analysis, visualisation of findings, workshop organisation, and reporting of results.
-    </h4> 
-    <br>
-    <h4>
-      My work aims to further the knowledge of data-driven approaches for design and evidence-based decision making for innovation.
-    </h4>
-  </div>
-
-  <!-- Contact Info -->
-  <div class="w3-padding-64 w3-content w3-center" id="contact">
-    <h2>Contact Me</h2>
-    <hr style="width:200px" class="w3-opacity">
-    <div class="w3-section" id="icon-space">
-      <a href="mailto:gustavoberumen@gmail.com" target="_blank"><i class="fa fa-envelope fa-fw w3-xxlarge w3-hover-opacity"></i></a>
-      <a href="https://www.linkedin.com/in/gustavoberumen/" target="_blank"><i class="fa fa-linkedin w3-hover-opacity w3-xxlarge w3-padding-large"></i></a>
+  <section class="hero">
+    <div class="container hero-content">
+      <h1>Empowering Your Business Growth</h1>
+      <p>Professional solutions for companies ready to scale.</p>
+      <a href="#services" class="btn btn-primary">Our Services</a>
     </div>
-    
-  <!-- End Contact Section -->
-  </div>
-  
-<!-- Footer -->
-<footer class="w3-content w3-padding-64 w3-xlarge">
- <!-- End footer -->
-</footer>
+  </section>
 
-<!-- END PAGE CONTENT -->
-</div>
+  <section id="about" class="about-section">
+    <div class="container about-content">
+      <div class="about-text">
+        <h2>About Us</h2>
+        <p>We are committed to driving business success through innovation and personalized service. Our team delivers results that matter.</p>
+      </div>
+      <div class="about-icons">
+        <div class="icon-box">
+          <span class="icon">💡</span>
+          <h3>Innovation</h3>
+          <p>Creative solutions tailored to your needs.</p>
+        </div>
+        <div class="icon-box">
+          <span class="icon">🤝</span>
+          <h3>Partnership</h3>
+          <p>We work as an extension of your team.</p>
+        </div>
+        <div class="icon-box">
+          <span class="icon">🚀</span>
+          <h3>Growth</h3>
+          <p>Strategies that scale with your business.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <section id="services" class="services-section">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="services-list">
+        <div class="service-card">
+          <h3>Consulting</h3>
+          <p>Expert advice to streamline your operations and maximize efficiency.</p>
+        </div>
+        <div class="service-card">
+          <h3>Marketing</h3>
+          <p>Comprehensive marketing strategies to boost your brand visibility.</p>
+        </div>
+        <div class="service-card">
+          <h3>Technology</h3>
+          <p>Modern solutions to digitize and automate your business.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <div class="container contact-content">
+      <h2>Contact Us</h2>
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <textarea placeholder="How can we help you?" required></textarea>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 BusinessName. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
