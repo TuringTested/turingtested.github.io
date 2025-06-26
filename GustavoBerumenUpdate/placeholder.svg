@@ -1,0 +1,10 @@
+<!-- filepath: images/placeholder.svg -->
+<svg width="220" height="120" viewBox="0 0 220 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Profile placeholder image" role="img">
+  <rect width="220" height="120" fill="#cccccc"/>
+  <g>
+    <rect x="60" y="35" width="100" height="50" rx="8" fill="#b3b3b3"/>
+    <circle cx="110" cy="60" r="16" fill="#888888"/>
+    <rect x="90" y="80" width="40" height="8" rx="4" fill="#aaaaaa"/>
+  </g>
+  <title>Profile placeholder image</title>
+</svg>
