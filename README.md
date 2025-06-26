@@ -1,1 +1,1 @@
-Space for practicing webpage development and creating projects for clients.
+Space for developing new version of Gustavo's profile page
