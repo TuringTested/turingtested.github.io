@@ -183,7 +183,12 @@ nav a:hover {
   text-align: center;
 }
 .contact-title {
-  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  display: block;
+  text-align: center;
+  font-size: 1.5rem; /* Match About Me heading */
+  font-weight: normal; /* Remove bold if About Me is not bold */
+  margin: 1.5em 0 0.5em 0;
+  font-family: inherit; /* Ensure it uses the same font as headings */
 }
 .contact-section p {
   margin-top: 1vw;
