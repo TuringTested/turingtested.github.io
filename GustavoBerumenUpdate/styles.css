@@ -91,6 +91,36 @@ nav a:hover {
 .btn-primary:hover {
   background: #0059c1;
 }
+.btn-cv {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 160px;
+  height: 48px;
+  border-radius: 0; /* sharp corners */
+  background: #222;  /* dark grey */
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  box-shadow: 0 2px 8px rgba(56, 64, 75, 0.07);
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  margin: 1.5em auto 0.5em auto;
+  text-decoration: none;
+  outline: none;
+  gap: 0.5em;
+}
+.btn-cv:hover, .btn-cv:focus {
+  background: #444; /* slightly lighter on hover */
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(56, 64, 75, 0.12);
+}
+.btn-cv svg {
+  width: 22px;
+  height: 22px;
+  fill: #fff;
+}
 
 /* Hero Section */
 .hero {
@@ -184,10 +214,11 @@ nav a:hover {
 }
 .contact-title {
   display: block;
-  text-align: center;
+  text-align: center;  /* Center text */
+  margin: 0 0 0.5em 0;
+  width: 100%;
   font-size: 1.5rem; /* Match About Me heading */
   font-weight: normal; /* Remove bold if About Me is not bold */
-  margin: 1.5em 0 0.5em 0;
   font-family: inherit; /* Ensure it uses the same font as headings */
 }
 .contact-section p {
@@ -196,8 +227,12 @@ nav a:hover {
   max-width: 100ch;
 }
 .contact-icons {
-  margin-top: 2vw;
-  text-align: center;
+  margin-top: 0.5em;
+  text-align: center;      /* Center icons under Contact Me */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 1vw;                /* Optional: keep spacing between icons */
 }
 .icon-link {
   margin: 0 1vw;
@@ -278,6 +313,50 @@ nav a:hover {
   text-align: center;
   padding: 24px 0;
   margin-top: 32px;
+}
+
+/* Align Download CV button and Contact Me section horizontally and center as a group */
+.cv-contact-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;   /* Align group to the left */
+  gap: 0.25rem;
+  margin: 2em 0 0 0;
+  width: 100%;
+  max-width: 600px;              /* Match about/text width for alignment */
+  padding-left: 0;               /* Remove any extra padding */
+}
+
+/* Optionally, for smaller screens, keep it centered */
+@media (max-width: 900px) {
+  .cv-contact-row {
+    justify-content: center;
+    max-width: 100%;
+  }
+}
+
+/* Stack Contact Me title and icons vertically, left-aligned */
+.cv-contact-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  width: 100%;
+}
+
+/* Remove centering from .contact-title and .contact-icons if present */
+.contact-title {
+  text-align: center;  /* Center text */
+  margin: 0 0 0.5em 0;
+  width: 100%;
+}
+
+.contact-icons {
+  margin-top: 0.5em;
+  text-align: center;      /* Center icons under Contact Me */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 1vw;                /* Optional: keep spacing between icons */
 }
 
 /* Responsive Design */
