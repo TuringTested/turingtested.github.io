@@ -1,11 +1,95 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Hello, World!</title>
-    </head>
-    <body>
-        <footer>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Downloads</title>
+    <style>
+      :root { --bg:#0f172a; --card:#111827; --text:#e5e7eb; --muted:#9ca3af; --accent:#22d3ee; }
+      html,body{height:100%}
+      body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,Arial,sans-serif;background:var(--bg);color:var(--text);display:flex;align-items:center;justify-content:center}
+      .wrap{max-width:860px;width:100%;padding:24px}
+      h1{margin:0 0 12px;font-weight:700;letter-spacing:.2px}
+      p.desc{margin:0 0 24px;color:var(--muted)}
+      .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+      .card{background:linear-gradient(180deg,rgba(255,255,255,.06),transparent 60%),var(--card);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:10px}
+      .title{font-weight:600}
+      .meta{font-size:.9rem;color:var(--muted)}
+      .btn{appearance:none;border:none;background:var(--accent);color:#0a0a0a;font-weight:700;padding:10px 12px;border-radius:12px;cursor:pointer;transition:transform .04s ease,filter .2s ease}
+      .btn:hover{filter:brightness(1.1)}
+      .btn:active{transform:translateY(1px)}
+      footer{margin-top:18px;color:var(--muted);font-size:.9rem}
+      a.inline{color:var(--accent);text-decoration:none}
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <h1>Downloads</h1>
+      <p class="desc">Click a button to download a file. Edit the <code>documents</code> list in the script to add your own.</p>
+      <section id="list" class="grid" aria-live="polite" aria-busy="true"></section>
+      <footer>
+        <span>Tip: For best results, host files on the same domain/folder.</span>
+      </footer>
+    </main>
 
-        </footer>
-    </body>
+    <script>
+      // --- Configure your files here ---
+      // Replace these examples with your own. "url" can be relative or absolute.
+      const documents = [
+        { name: "Project Brief", type: "PDF", size: "1.2 MB", url: "files/project-brief.pdf" },
+        { name: "Logo Pack", type: "ZIP", size: "4.6 MB", url: "files/brand-assets.zip" },
+        { name: "Data Export", type: "CSV", size: "620 KB", url: "files/export.csv" }
+      ];
+
+      // Renders a card with a Download button for each document.
+      const list = document.getElementById('list');
+
+      function createCard(doc){
+        const card = document.createElement('article');
+        card.className = 'card';
+
+        const title = document.createElement('div');
+        title.className = 'title';
+        title.textContent = doc.name;
+
+        const meta = document.createElement('div');
+        meta.className = 'meta';
+        meta.textContent = [doc.type, doc.size].filter(Boolean).join(' • ');
+
+        const btn = document.createElement('button');
+        btn.className = 'btn';
+        btn.type = 'button';
+        btn.setAttribute('aria-label', `Download ${doc.name}${doc.type?(' '+doc.type):''}`);
+        btn.textContent = 'Download';
+        btn.addEventListener('click', () => downloadFile(doc.url, doc.name));
+
+        card.append(title, meta, btn);
+        return card;
+      }
+
+      function downloadFile(url, suggestedName){
+        // Use an anchor with the download attribute for a simple, cross‑browser download cue.
+        const a = document.createElement('a');
+        a.href = url;
+        // Suggest a filename; browsers may override based on headers.
+        if (suggestedName) a.download = suggestedName;
+        a.rel = 'noopener';
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+      }
+
+      function render(){
+        list.innerHTML = '';
+        documents.forEach(doc => list.appendChild(createCard(doc)));
+        list.setAttribute('aria-busy','false');
+      }
+
+      render();
+    </script>
+
+    <noscript>
+      Enable JavaScript to see the download buttons.
+    </noscript>
+  </body>
 </html>
